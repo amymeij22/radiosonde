@@ -12,12 +12,12 @@ if (!$conn) {
 }
 
 // Query untuk mengambil data dari tabel
-$sql = "SELECT temperature, humidity, pressure, altitude, longitude, latitude FROM radiosonde";
+$sql = "SELECT datetime, time, temperature, humidity, pressure, altitude, longitude, latitude FROM radiosonde";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // Nama file CSV
-    $filename = 'data_radiosonde.csv';
+    $filename = 'radiosonde-data.csv';
 
     // Set header untuk membuat browser menganggap ini sebagai file yang akan didownload
     header('Content-Type: text/csv');
@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) > 0) {
     $file = fopen('php://output', 'w');
 
     // Tulis header kolom ke file CSV
-    fputcsv($file, ["Temperature", "Humidity", "Pressure", "Altitude", "Longitude", "Latitude"]);
+    fputcsv($file, ["Date", "Time", "Temperature", "Humidity", "Pressure", "Altitude", "Longitude", "Latitude"]);
 
     // Tulis setiap baris data ke file CSV
     while ($row = mysqli_fetch_assoc($result)) {
