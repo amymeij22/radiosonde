@@ -14,15 +14,22 @@ This project is a dashboard for monitoring radiosonde data, including temperatur
 1. Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/username/dashboard-radiosonde.git
+    git clone https://github.com/amymeij22/radiosonde.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd dashboard-radiosonde
+    cd radiosonde
     ```
+3. Configure the database at ./connection/get-data.php and ./connection/download.php
 
+   ```bash
+    $hostname = "localhost"; \\
+    $username = "root";
+    $password = "";
+    $database = "radiosonde_db";
+    ```
 3. Open the `index.php` file using a web browser to view the dashboard.
 
 ## Usage
