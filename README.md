@@ -22,7 +22,7 @@ This project is a dashboard for monitoring radiosonde data, including temperatur
     ```bash
     cd radiosonde
     ```
-3. Configure the database at ./connection/get-data.php and ./connection/download.php
+3. Configure the database at `./connection/get-data.php` and `./connection/download.php`
 
    ```bash
     $hostname = "localhost"; \\
